@@ -12,7 +12,7 @@ module.exports = {
 // Index Route
 async function index(req, res) {
   try {
-    res.json(await Ffpc.find({}).sort({itemNumber: 1}));
+    res.json(await Ffpc.find({}).sort({idd: 1}));
   } catch (error) {
     res.status(400).json(error);
   };
@@ -21,7 +21,7 @@ async function index(req, res) {
 // Delete Route
 async function deleteFfpcPost(req, res) {
   try {
-    res.json(await Menu.findByIdAndDelete(req.params.id));
+    res.json(await Ffpc.findByIdAndDelete(req.params.id));
   } catch (error) {
     res.status(400).json(error);
   };
