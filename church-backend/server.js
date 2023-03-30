@@ -23,19 +23,6 @@ app.use((req, res, next) => {
 const ffpcRouter = require("./routes/ffpc");
 app.use("/api/ffpc", ffpcRouter);
 
-/*
-mongoose connection. Here's another way to do a mongoose connection
-mongoose.connect.(process.env.DATABASE_URI)
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log('connected to db and listening on post', PORT)
-    })
-  })
-  .catch((error) => {
-    console.log(error)
-  })
-*/
-
 // app listener
 app.listen(PORT, () => {
   console.log("Listening on Port: ", PORT);
