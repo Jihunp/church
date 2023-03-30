@@ -1,9 +1,8 @@
-export default function Home(props) {
+export default function Home() {
 
-  console.log(props.data)
   return (
     <>
-    <h1> Hello this is the Home page</h1>
+      <h1> Hello this is the Home page</h1>
     </>
   )
 

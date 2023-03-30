@@ -1,13 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Noto+Serif&family=Open+Sans&family=Oswald:wght@200&display=swap');
+
+/* layouts */
+/* 
+Light beige #E9D3C0
+Dark beige #A18167
+font-family: 'Manrope', sans-serif;
+font-family: 'Noto Serif', serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Oswald', sans-serif;
+*/
+:root {
+  --primary: #E9D3C0;
+  --secondary: #A18167;
+  --error: red;
+}
 body {
+  background: white;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Open Sans";
+}
+header {
+  background: #fff;
+}
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header a {
+  color: #333;
+  text-decoration: none;
+}
+
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
 }
