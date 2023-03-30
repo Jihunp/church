@@ -1,57 +1,43 @@
 const Ffpc = require("../models/ffpc");
+const mongoose = require('mongoose')
+
+//get all posts
+const getPosts = async(req,res) => {
+  const ffpcs = await Ffpc.find({}).sort({createdAt: -1})
+
+  res.status(200).json(ffpcs)
+}
+
+//get a single post
+const getPost = async(req, res) => {
+  const { id } = req.params
+
+  if(!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: "no such workout"})
+  }
+
+  const ffpc = await Ffpc.findById(id)
+  if(!ffpc) {
+    return res.status(404).json({error: "no post is found"})
+  }
+  res.status(200).json(ffpc)
+}
+
+
+// create new post
+const createPost = async(req, res) => {
+  const {title, caption} = req.body
+  
+  try {
+    const ffpc = await Ffpc.create({title, caption})
+    res.status(200).json(ffpc)
+  } catch (error) {
+    res.status(400).json({error: error.message})
+  }
+}
 
 module.exports = {
-  index,
-  delete: deleteFfpcPost,
-  update,
-  create,
-  show,
-};
-
-// INDUCES - Index Delete Update Create Edit Show
-// Index Route
-async function index(req, res) {
-  try {
-    res.json(await Ffpc.find({}).sort({idd: 1}));
-  } catch (error) {
-    res.status(400).json(error);
-  };
-};
-
-// Delete Route
-async function deleteFfpcPost(req, res) {
-  try {
-    res.json(await Ffpc.findByIdAndDelete(req.params.id));
-  } catch (error) {
-    res.status(400).json(error);
-  };
-};
-
-// Update Route
-async function update(req, res) {
-  try {
-    res.json(
-      await Ffpc.findByIdAndUpdate(req.params.id, req.body, {new: true})
-    );
-  } catch (error) {
-    res.status(400).json(error);
-  };
-};
-
-// Create Route
-async function create(req, res) {
-  try {
-    res.json(await Ffpc.create(req.body));
-  } catch (error) {
-    res.status(400).json(error);
-  };
-};
-
-// Show Route
-async function show(req, res) {
-  try {
-    res.json(await Ffpc.findById(req.params.id));
-  } catch (error) {
-    res.status(400).json(error);
-  };
+  getPosts,
+  getPost,
+  createPost,
 };

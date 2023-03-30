@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 
 const ffpcSchema = new Schema(
   {
-    body: {type: String}
+    title: {type: String, required: true}
   },
   {
-    timestamps: true,
-  }
-)
+    caption: {type: String,}
+  },
+  { timestamps: true })
 
 const Ffpc = mongoose.model("Ffpc", ffpcSchema);
 module.exports = Ffpc;
