@@ -13,7 +13,7 @@ const getPost = async(req, res) => {
   const { id } = req.params
 
   if(!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({error: "no such workout"})
+    return res.status(404).json({error: "no such post"})
   }
 
   const ffpc = await Ffpc.findById(id)
@@ -36,8 +36,43 @@ const createPost = async(req, res) => {
   }
 }
 
+// delete a post
+const deletePost = async (req, res) => {
+  const { id } = req.params
+
+  if(!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: 'No such post'})
+  }
+  const ffpc = await Ffpc.findOneAndDelete({_id: id})
+
+  if(!ffpc) {
+    return res.status(404).json({error: "no post is found"})
+  }
+  res.status(200).json(ffpc)
+}
+
+//update a post
+const updatePost = async (req, res) => {
+  const { id } = req.params
+
+  if(!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: 'No such post'})
+  }
+
+  const ffpc = await Ffpc.findOneAndUpdate({_id: id}, {
+    ...req.body
+  })
+
+  if(!ffpc) {
+    return res.status(404).json({error: "no post is found"})
+  }
+  res.status(200).json(ffpc)
+}
+
 module.exports = {
   getPosts,
   getPost,
   createPost,
+  deletePost,
+  updatePost,
 };
