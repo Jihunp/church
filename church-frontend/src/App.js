@@ -1,19 +1,18 @@
 import React from "react";
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 
-//import components
+//import pages
 import Home from "./pages/Home"
 //import About from "./pages/About"
 
-//pages
-import Navbar from "./components/navBar"
+//import components
+import Navbar from "./components/NavBar"
 
-
+//next thing to do is fetch data.
 function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
         <Navbar />
         <div className="pages">
           <Routes>
@@ -23,7 +22,6 @@ function App() {
             />
           </Routes>
         </div>
-      </BrowserRouter>
     </div>
   );
 }
