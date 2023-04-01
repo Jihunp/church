@@ -23,9 +23,11 @@ export default function Home() {
   return (
     <div className="home">
       <div className="posts">
+        {/* 
         {posts && posts.map((ffpc) => (
           <PostDetails key={ffpc._id} ffpc={ffpc}/>
         ))}
+        */}
       </div>
       <h1> Home</h1>
     </div>
