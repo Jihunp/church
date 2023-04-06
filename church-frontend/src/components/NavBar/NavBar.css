@@ -1,0 +1,43 @@
+/*
+header {
+  box-shadow: none;
+}
+#container {
+  height: 8vh;
+  width: 70vh;
+  min-width: 600px;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  padding: 13px;
+}
+
+.nav {
+  position: relative;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  color: grey;
+  float: right;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  padding: 0 20px;
+}
+.nav::after {
+  content:"";
+  display: block;
+  margin: left;
+  background-color: #000000;
+  height: 3px;
+  width: 0;
+  left: 0;
+  transition: 0.3s;
+}
+
+.nav:hover {
+  color: #000000;
+}
+
+.nav:hover:after {
+  width: 100% ;
+}
+*/

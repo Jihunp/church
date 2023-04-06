@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+//import EM from "../assets/EM.jpg"
 //components
 import PostDetails from "../components/postDetails"
 
@@ -21,14 +21,16 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="home">
+    <div id="home-backdrop" className="home">
       <div className="posts">
+        {/* <img id="landing-photo" src={require("../assets/EM.jpg")} alt="group EM" /> */}
         {/* 
         {posts && posts.map((ffpc) => (
           <PostDetails key={ffpc._id} ffpc={ffpc}/>
         ))}
         */}
       </div>
+      <div></div>
       <h1> Home</h1>
     </div>
   )
