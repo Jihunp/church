@@ -6,6 +6,9 @@ import styled from "styled-components";
 import Home from "./pages/Home";
 //import About from "./pages/About"
 
+//import images
+import worship1 from "./assets/images/worship1.jpg";
+
 //import components
 //import NavBar from "./components/NavBar/NavBar"
 
@@ -13,6 +16,7 @@ import Contact from "./components/Contact";
 import Hello from "./components/Hello";
 import Team from "./components/Team";
 import Who from "./components/Who";
+import NavBar from "./components/NavBar";
 
 //webkit-scrollbar is to erase scroll bar for chrome
 const Container = styled.div`
@@ -22,7 +26,9 @@ const Container = styled.div`
   overflow-y: auto;
   scrollbar-width: none;
   color: white;
-  background 
+  background-image: url(${worship1});
+  background-size: 100%;
+  opacity: 0.6;
   &::-webkit-scrollbar {
     display: none;
   };
@@ -32,16 +38,21 @@ const Container = styled.div`
 function App() {
 
   return (
+    <div>
+
+    
     <Container>
       <Routes>
         {/* <Route path="/" element={<Home />}/> */}
 
       </Routes>
+      <NavBar />
       <Hello />
       <Who />
       <Team />
       <Contact />
     </Container>
+    </div>
   );
 }
 
