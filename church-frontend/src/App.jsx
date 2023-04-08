@@ -20,9 +20,11 @@ import NavBar from "./components/NavBar";
 
 //webkit-scrollbar is to erase scroll bar for chrome
 const Container = styled.div`
+  margin: auto;
   height: 100vh;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  overscroll-behavior: none;
   overflow-y: auto;
   scrollbar-width: none;
   color: white;
@@ -46,7 +48,6 @@ function App() {
         {/* <Route path="/" element={<Home />}/> */}
 
       </Routes>
-      <NavBar />
       <Hello />
       <Who />
       <Team />

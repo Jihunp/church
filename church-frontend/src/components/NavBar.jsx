@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const Section = styled.div`
-  height: 10;
-  scroll-snap-align: center;
   display: flex;
   justify-content: center;
+  scroll-snap-align: center;
 
 `
 const Container = styled.div`
@@ -27,25 +26,52 @@ const Icons = styled.div`
   gap: 30px;
 `
 const List = styled.ul`
-  display:flex;
+  display: flex;
   gap: 20px;
   list-style: none;
 `
 const ListItem = styled.li`
-  font-size: 20px;
+  font-size: 25px;
+  cursor: pointer;
+
+  position: relative;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+
+  &:after{
+    content:"";
+    display: block;
+    margin: left;
+    background-color: #000000;
+    height: 3px;
+    width: 0;
+    left: 0;
+    transition 0.3s;
+  }
+  &:hover {
+    color: #000000;
+  }
+  &:hover:after {
+    width: 100%;
+  }
 
 `
 const Button = styled.button`
+  font-size: 16px;
   width: 100px;
   padding: 10px;
   background-color: #8d8b55;
   color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
   &:hover {
     color: black;
   }
 `
 const Logo = styled.img`
-  height: 40px;
+  height: 50px;
+  opacity: none;
 `
 const Icon = styled.img`
   width: 30px;
