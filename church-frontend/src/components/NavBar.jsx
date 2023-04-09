@@ -13,7 +13,10 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
-  padding-left: 55vh;
+  padding-left: 45vh;
+  @media only screen and (max-width: 800px) {
+    padding-left: 40vh;
+  }
 `
 const Links = styled.div`
   display: flex;
@@ -24,6 +27,11 @@ const Icons = styled.div`
   display: flex;
   align-items: center;
   gap: 30px;
+  padding-left: 150px;
+
+  @media only screen and (max-width: 800px) {
+    padding-left: 0px;
+  }
 `
 const List = styled.ul`
   display: flex;

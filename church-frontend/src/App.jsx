@@ -1,6 +1,7 @@
 import React from "react";
 import {Routes, Route} from 'react-router-dom';
-import styled from "styled-components";
+import styled, {ThemeProvider} from "styled-components";
+import {theme} from "./Theme";
 
 //import pages
 import Home from "./pages/Home";
@@ -20,6 +21,7 @@ import NavBar from "./components/NavBar";
 
 //webkit-scrollbar is to erase scroll bar for chrome
 const Container = styled.div`
+  color: ${(props) => props.theme.colors.test};
   margin: auto;
   height: 100vh;
   scroll-snap-type: y mandatory;
@@ -27,14 +29,13 @@ const Container = styled.div`
   overscroll-behavior: none;
   overflow-y: auto;
   scrollbar-width: none;
-  color: white;
   background-image: url(${worship1});
   background-size: 100%;
-  opacity: 0.6;
   &::-webkit-scrollbar {
     display: none;
   };
 `
+
 
 
 function App() {
@@ -42,17 +43,17 @@ function App() {
   return (
     <div>
 
-    
-    <Container>
-      <Routes>
-        {/* <Route path="/" element={<Home />}/> */}
-
-      </Routes>
-      <Hello />
-      <Who />
-      <Team />
-      <Contact />
-    </Container>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <Routes>
+          {/* <Route path="/" element={<Home />}/> */}
+        </Routes>
+        <Hello />
+        <Who />
+        <Team />
+        <Contact />
+      </Container>
+    </ThemeProvider>
     </div>
   );
 }
