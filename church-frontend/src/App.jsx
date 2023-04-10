@@ -18,6 +18,7 @@ import Contact from "./components/Contact";
 import Hello from "./components/Hello";
 import Team from "./components/Team";
 import Who from "./components/Who";
+import Projects from "./components/Projects"
 
 //webkit-scrollbar is to erase scroll bar for chrome
 const Container = styled.div`
@@ -50,8 +51,9 @@ function App() {
         </Routes>
         <Hello />
         <Who />
-        <Team />
+        <Projects />
         <Contact />
+        <Team />
       </Container>
     </ThemeProvider>
     </div>
