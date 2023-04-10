@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 
 //import images
 import worship1 from "./assets/images/worship1.jpg";
+import background from "./assets/images/background.jpg"
 
 //import components
 //import NavBar from "./components/NavBar/NavBar"
@@ -17,7 +18,6 @@ import Contact from "./components/Contact";
 import Hello from "./components/Hello";
 import Team from "./components/Team";
 import Who from "./components/Who";
-import NavBar from "./components/NavBar";
 
 //webkit-scrollbar is to erase scroll bar for chrome
 const Container = styled.div`
@@ -29,7 +29,7 @@ const Container = styled.div`
   overscroll-behavior: none;
   overflow-y: auto;
   scrollbar-width: none;
-  background-image: url(${worship1});
+  background-image: url(${background});
   background-size: 100%;
   &::-webkit-scrollbar {
     display: none;

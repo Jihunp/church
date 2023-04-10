@@ -68,7 +68,7 @@ const Button = styled.button`
   font-size: 16px;
   width: 100px;
   padding: 10px;
-  background-color: #8d8b55;
+  background-color: ${(props) => props.theme.colors.olive};
   color: white;
   border: none;
   border-radius: 3px;
