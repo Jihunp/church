@@ -53,18 +53,18 @@ const Description = styled.p`
   opacity: 0.6;
 `
 const Button = styled.button`
-font-size: 14px;
-font-weight: 500;
-width: 100px;
-padding: 10px;
-background-color: ${(props) => props.theme.colors.olive};
-color: white;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-&:hover {
-  color: black;
-}
+  font-size: 14px;
+  font-weight: 500;
+  width: 100px;
+  padding: 10px;
+  background-color: ${(props) => props.theme.colors.olive};
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    color: black;
+  }
 `
 const Img = styled.img`
   height: 400px;
