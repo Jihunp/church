@@ -43,7 +43,7 @@ const ListItem = styled.li`
   cursor: pointer;
   color: transparent;
   position: relative;
-  -webkit-text-stroke: .1px ${(props) => props.theme.colors.oliveDark};;
+  -webkit-text-stroke: .1px ${(props) => props.theme.colors.olive};;
   // text-shadow: 0px 5px 5px grey; // for depth with characters.
   
   ::after {
@@ -53,7 +53,7 @@ const ListItem = styled.li`
     top: 0;
     left: 0;
     width: 0px;
-    color: ${(props) => props.theme.colors.oliveDark};
+    color: ${(props) => props.theme.colors.olive};
     white-space: nowrap;
   }
   

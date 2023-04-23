@@ -20,6 +20,7 @@ import Team from "./components/Team";
 import Who from "./components/Who";
 import Projects from "./components/Projects"
 
+
 //webkit-scrollbar is to erase scroll bar for chrome
 const Container = styled.div`
   color: ${(props) => props.theme.colors.test};
